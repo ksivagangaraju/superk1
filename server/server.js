@@ -12,7 +12,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://your-netlify-site.netlify.app",
-      "https://superk1.netlify.app/",
+      "https://superk1.netlify.app",
     ],
     credentials: true,
   },
@@ -20,7 +20,7 @@ const io = new Server(server, {
 
 app.use(express.json());
 app.use(
-  cors({ origin: ["https://your-netlify-site.netlify.app"], credentials: true })
+  cors({ origin: ["https://your-netlify-site.netlify.app", "https://superk1.netlify.app"], credentials: true })
 );
 
 // Serve static admin assets from ./public
