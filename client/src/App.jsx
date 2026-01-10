@@ -40,7 +40,7 @@ export default function App() {
       (import.meta.env && import.meta.env.VITE_BACKEND_URL) ||
       "http://localhost:3000";
     console.log("App connecting to backend at", BACKEND);
-    fetch(`${BACKEND}/state`)
+    fetch(`${BACKEND}`)
       .then((r) => r.json())
       .then((s) => {
         setState(s);
