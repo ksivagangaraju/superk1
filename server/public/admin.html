@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin — SuperK Warehouse 1</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <main class="main" style="max-width: 900px; margin: 20px auto">
+      <section class="editor">
+        <div id="loginPanel" class="editor-row">
+          <input id="adminUser" type="text" placeholder="Admin user" />
+          <input id="adminPass" type="password" placeholder="Password" />
+          <button class="btn btn-primary" id="loginBtn">Login</button>
+        </div>
+
+        <div id="adminControls" class="editor-row" style="display: none">
+          <label
+            >Rows <input id="rowsInputAdmin" type="number" min="1" value="3"
+          /></label>
+          <label
+            >Cols <input id="colsInputAdmin" type="number" min="1" value="3"
+          /></label>
+          <button class="btn btn-primary" id="generateBtnAdmin">
+            Generate
+          </button>
+          <button class="btn btn-ghost" id="resetBtnAdmin">Reset</button>
+          <button class="btn btn-ghost" id="logoutBtn">Logout</button>
+        </div>
+
+        <div class="editor-row" style="margin-top: 10px">
+          <input id="editBoxNumAdmin" type="number" placeholder="No" min="1" />
+          <input id="editSubtitleAdmin" type="text" placeholder="Name" />
+          <select id="editVisibilityAdmin">
+            <option value="show">Show</option>
+            <option value="hide">Hide (Gap)</option>
+          </select>
+          <button class="btn btn-primary" id="updateBtnAdmin">Update</button>
+        </div>
+
+        <p class="hint">
+          You must be logged in to perform updates. Changes broadcast to all
+          users.
+        </p>
+      </section>
+
+      <section class="grid-area">
+        <div id="grid-container-admin" class="grid-container" role="list"></div>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="admin-script.js"></script>
+  </body>
+</html>
